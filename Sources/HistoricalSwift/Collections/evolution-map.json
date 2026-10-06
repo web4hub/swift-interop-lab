@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "language": "Swift",
+  "domain": "collections",
+  "mappings": [
+    {"historical":"SequenceType","modern":"Sequence","category":"protocol"},
+    {"historical":"CollectionType","modern":"Collection","category":"protocol"},
+    {"historical":"RandomAccessIndexType","modern":"RandomAccessCollection","category":"protocol-model"},
+    {"historical":"Generator","modern":"IteratorProtocol","category":"protocol"},
+    {"historical":"advancedBy","modern":"index(_:offsetBy:)","category":"indexing"},
+    {"historical":"isUniquelyReferencedNonObjC","modern":"isKnownUniquelyReferenced","category":"copy-on-write"},
+    {"historical":"appendContentsOf","modern":"append(contentsOf:)","category":"collection-api"},
+    {"historical":"ForwardIndexType","modern":"Collection.Index / BidirectionalCollection.Index","category":"index-model"}
+  ]
+}
