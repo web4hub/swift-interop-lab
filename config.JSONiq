@@ -1,1 +1,24 @@
-*/*
+swift-interop-lab/
+├── Sources/
+│   ├── CInterop/
+│   │   ├── include/
+│   │   │   ├── ArcStructs.hxx
+│   │   │   └── CTypes.hxx
+│   │   └── ArcStructs.cc
+│   ├── ObjCInterop/
+│   │   ├── ArcStructs.hxx
+│   │   └── ArcStructs.mm
+│   ├── ObjCxxInterop/
+│   │   ├── Bridge.hxx
+│   │   └── Bridge.mm
+│   ├── CxxInterop/
+│   │   ├── Bridge.hxx
+│   │   └── Bridge.cxx
+│   └── SwiftInterop/
+│       └── main.swift
+├── Examples/
+├── Compiler/
+├── Tests/
+├── docs/
+├── scripts/
+└── CMakeLists.txt
