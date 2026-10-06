@@ -143,3 +143,50 @@ This produces AST, SIL, and LLVM IR artifacts under `build/historical-collection
 The old Swift snippets are treated as historical language/library archaeology rather than as a single modern source file. The fixtures preserve the important transitions: generic algorithms, persistent lists, index identity, collection conformance, slicing/index semantics, and copy-on-write storage.
 
 See `docs/historical-collections.md` for the progression and interpretation.
+
+
+## Historical → modern compiler diff
+
+The collections lab now includes a semantic evolution map and a reproducible compiler report:
+
+```text
+historical Swift concept
+        |
+        v
+evolution-map.json
+        |
+        v
+modern Swift fixture
+        |
+        +--> typecheck
+        +--> Swift AST
+        +--> SIL
+        +--> LLVM IR
+        |
+        v
+evolution-report.md
+```
+
+Run:
+
+```bash
+chmod +x Scripts/*.sh
+Scripts/compare-historical.sh
+```
+
+This captures the current Swift/Clang toolchain identity and generates per-fixture AST, SIL, LLVM IR, plus `evolution-report.md`.
+
+The semantic mappings include:
+
+```text
+SequenceType                 → Sequence
+CollectionType               → Collection
+RandomAccessIndexType        → RandomAccessCollection
+Generator                    → IteratorProtocol
+advancedBy                   → index(_:offsetBy:)
+isUniquelyReferencedNonObjC → isKnownUniquelyReferenced
+appendContentsOf             → append(contentsOf:)
+ForwardIndexType             → modern Collection index model
+```
+
+See `docs/historical-compiler-diff.md`.
