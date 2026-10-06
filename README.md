@@ -110,3 +110,36 @@ swift-interop-lab/
 ├── config.jsq
 └── README.md
 ```
+
+
+## Historical Swift collections observation
+
+The historical Swift collection material is now preserved as modern, isolated compiler fixtures:
+
+```text
+Sources/HistoricalSwift/Collections/
+├── MergeSort.swift
+├── BinarySearch.swift
+├── PersistentList.swift
+├── TaggedListIndex.swift
+└── CopyOnWrite.swift
+
+Scripts/
+├── collections-ast.sh
+├── collections-sil.sh
+├── collections-ir.sh
+└── collections-observe.sh
+```
+
+Run the observation pipeline:
+
+```bash
+chmod +x Scripts/*.sh
+Scripts/collections-observe.sh
+```
+
+This produces AST, SIL, and LLVM IR artifacts under `build/historical-collections/`.
+
+The old Swift snippets are treated as historical language/library archaeology rather than as a single modern source file. The fixtures preserve the important transitions: generic algorithms, persistent lists, index identity, collection conformance, slicing/index semantics, and copy-on-write storage.
+
+See `docs/historical-collections.md` for the progression and interpretation.
