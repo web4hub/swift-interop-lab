@@ -1,1 +1,1 @@
-*/*
+/sparse.*index/
