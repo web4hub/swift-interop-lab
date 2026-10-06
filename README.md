@@ -7,13 +7,13 @@
 ├── Sources/
 │   ├── CInterop/
 │   │   ├── include/
-│   │   │   ├── ArcStructs.h
-│   │   │   └── CTypes.h
-│   │   └── ArcStructs.c
+│   │   │   ├── ArcStructs.hxx
+│   │   │   └── CTypes.hxx
+│   │   └── ArcStructs.cxx
 │   │
 │   ├── ObjCInterop/
-│   │   ├── ArcStructs.h
-│   │   └── ArcStructs.m
+│   │   ├── ArcStructs.hxx
+│   │   └── ArcStructs.mm
 │   │
 │   ├── ObjCxxInterop/
 │   │   ├── Bridge.hpp
