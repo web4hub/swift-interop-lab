@@ -1,4 +1,8 @@
-swift-interop-lab/
+~
+cmake -G Ninja -B build
+cmake --build build
+ctest --test-dir build --output-on-failure
+
 ├── Sources/
 │   ├── CInterop/
 │   │   ├── include/
