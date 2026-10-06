@@ -1,0 +1,34 @@
+PrimaryExpr ::= -- everything so far --
+| ObjectConstructor
+| ArrayConstructor
+ObjectConstructor ::= "{" ( PairConstructor ("," PairConstructor)* )? "}"
+PairConstructor ::= ExprSingle ":" ExprSingle
+ArrayConstructor ::= "[" Expr? "]"
+ExprSingle ::= -- everything so far --
+| JSONDeleteExpr
+| JSONInsertExpr
+| JSONRenameExpr
+| JSONReplaceExpr
+| JSONAppendExpr
+JSONDeleteExpr ::= "delete" "json" PrimaryExpr ( "(" ExprSingle ")" )+
+JSONInsertExpr ::= "insert" "json" ExprSingle "into" ExprSingle
+("at" "position" ExprSingle)?
+| "insert" "json" PairConstructor ("," Pair Constructor)*
+"into" ExprSingle
+JSONRenameExpr ::= "rename" "json" PrimaryExpr ( "(" ExprSingle ")" )+
+"as" ExprSingle
+JSONReplaceExpr ::= "replace" "json" "value" "of"
+PrimaryExpr ( "(" ExprSingle ")" )+
+"with" ExprSingle
+JSONAppendExpr ::= "append" "json" ExprSingle "into" ExprSingle
+ItemType ::= -- everything so far --
+| JSONTest
+| StructuredItemTest
+JSONTest ::=
+JSONItemTest
+| JSONObjectTest
+| JSONArrayTest
+StructuredItemTest ::= "structured-item" "(" ")"
+JSONItemTest ::= "json-item" "(" ")"
+JSONObjectTest ::= "object" "(" ")"
+JSONArrayTest ::= "array" "(" ")"
