@@ -1,3 +1,9 @@
+pip install jsoniq
+from jsoniq import RumbleSession
+
+rumble = RumbleSession.builder.getOrCreate();
+
+print(rumble.jsoniq('{ "foo": [ 6*7 ] }').json());
 for $user in (
   {"name": "Alice", "age": 21},
   {"name": "Bob", "age": 17},
